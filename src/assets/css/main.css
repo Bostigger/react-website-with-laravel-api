@@ -1,0 +1,269 @@
+
+.topBar{
+    background-image: url("../../assets/images/banner.jpg");
+    min-height: 550px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.overLay{
+    min-height: 550px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    width: 100%;
+}
+
+.topBarTitle{
+    color: #fff;
+    font-family: "Montserrat", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.topBarSubTitle{
+    color: #fff;
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+
+.mainContent{
+    margin-top: 10em;
+}
+
+.servicesCard{
+    height: 22rem;
+    padding: 60px 30px 60px 30px ;
+    margin: 5px 5px 5px 5px;
+    box-shadow: 0 0 16px 0 rgba(4,55,105,0.1);
+}
+
+.servicesCard:hover{
+    height: 22rem;
+    padding: 60px 30px 60px 30px ;
+    margin: 5px 5px 5px 5px;
+    box-shadow: 0 0 16px 0 rgba(4,55,105,0.3);
+}
+
+.serviceText{
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.serviceTitle{
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #011025;
+}
+.serviceHeader{
+    color: #011025;
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+.bottom-line{
+    background: #02021a none repeat scroll 0 0;
+    height: 3px;
+    width: 100px;
+    margin: -3.9rem auto 3rem;
+}
+
+.navbarTitle{
+    color: #fff3cd !important;
+}
+
+.navbarTitleScroll{
+    color: #02021a !important;
+}
+
+.navbarBg{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.navbarBgScroll{
+
+    -o-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -webkit-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+    background-color: #fff;
+    box-shadow: 0 0 16px 0 rgba(4,55,105,0.3);
+}
+
+.summarySection{
+    min-height: 400px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(1, 8, 28, 0.86)), url("../../assets/images/banner.jpg") no-repeat fixed center;
+    background-size: cover;
+
+}
+
+.summarySectionOverLay{
+    min-height: 400px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    width: 100%;
+}
+
+.projectCard{
+    margin: 40px;
+    box-shadow: 0 0 16px 0 rgba(4,55,105,0.1);
+    transition: all ease 400ms;
+}
+.projectCard:hover{
+    transform: scale(1.03);
+    margin: 20px;
+    box-shadow: 0 0 16px 0 rgba(4,55,105,0.4)
+}
+
+
+.sumaryText{
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.summaryHeader{
+    color: #011025;
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5rem;
+    margin-bottom: 5px;
+
+}
+
+.iconStyle{
+    color: #011025;
+    font-size: 19px;
+}
+
+.iconStyleHeading{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.pageVideo{
+    padding: 8rem 3rem;
+    background-color:#011025;
+    border-radius: 5px;
+    margin: 20px auto;
+    box-shadow: 0 13px 10px -5px;
+}
+.reviewSection{
+    background-color:#011025;
+    min-height: 220px;
+}
+
+.reviewText{
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+.reviewHeader{
+    color: #fff;
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+.reviewName{
+    color: #fff;
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+}
+.revbottom-line{
+    background: #fff none repeat scroll 0 0;
+    height: 3px;
+    width: 100px;
+    margin: -3.9rem auto 3rem;
+}
+
+.imgStyle{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 3%;
+}
+.editReview{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.aboutImage{
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background-color:#011025;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    float: right;
+}
+.aboutMeDetails{
+    margin-top: 10em;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.aboutMeIntro{
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    font-size: 28px;
+
+}
+
+.aboutMeName{
+    color: #011025;
+    font-family: "Montserrat", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 40px;
+
+}
+
+.footerMain{
+    background-color: #011025;
+    margin-top: 5rem;
+}
+.footerText{
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #fff;
+}
+.footerMainText{
+    font-family: "Raleway", serif;
+    font-size: 14px;
+    color: #fff3cd;
+}
+
+.footerLink{
+    text-decoration: none;
+    color: #fff3cd;
+    font-family: "Raleway", serif;
+    font-size: 14px;
+}
+
+.copyRightSection {
+    background-color: #021a3f;
+    padding-top: 13px;
+    padding-bottom: 3px;
+}
+.coprightText{
+    color: #fff3cd;
+    font-family: "Raleway", serif;
+    font-size: 14px;
+}
