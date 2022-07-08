@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 class Projects extends Component{
 
@@ -19,7 +20,7 @@ class Projects extends Component{
                                            Some quick example text to build on the card title and make up the
                                            bulk of the card's content.
                                        </Card.Text>
-                                       <Button variant="primary">View Project</Button>
+                                       <Button variant="primary"> <Link className={"pageLinks"} to={"/project-details"}> View Project Details</Link></Button>
                                    </Card.Body>
                                </Card>
                            </Col>
@@ -33,7 +34,7 @@ class Projects extends Component{
                                            Some quick example text to build on the card title and make up the
                                            bulk of the card's content.
                                        </Card.Text>
-                                       <Button variant="primary">View Project</Button>
+                                       <Button variant="primary"> <Link className={"pageLinks"}  to={"/project-details"}> View Project Details</Link></Button>
                                    </Card.Body>
                                </Card>
                            </Col>
@@ -47,7 +48,7 @@ class Projects extends Component{
                                            Some quick example text to build on the card title and make up the
                                            bulk of the card's content.
                                        </Card.Text>
-                                       <Button variant="primary">View Project</Button>
+                                       <Button variant="primary"> <Link className={"pageLinks"}  to={"/project-details"}> View Project Details</Link></Button>
                                    </Card.Body>
                                </Card>
                            </Col>

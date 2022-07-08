@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import {Col, Container, Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 class Courses  extends Component{
 
@@ -14,11 +15,13 @@ class Courses  extends Component{
                            <Row>
                                <Col lg={6} md={12} sm={12}>
                                    <img style={{width:'100%'}} src="https://img.freepik.com/free-photo/senior-man-woman-paying-attention-class_23-2149114210.jpg?t=st=1657102774~exp=1657103374~hmac=d93096288f252ff1cf914662729e1b3a53f2db1a89a1a6d734f5c6cfbb6a129a&w=826" alt=""/>
+
                                </Col>
                                
                                <Col lg={6} md={6} sm={12}>
                                  <h3 className={"serviceTitle"}>React</h3>
                                    <p style={{textAlign:'justify'}} className={"serviceText"}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturi   </p>
+                                   <p><Link to={"/course-details"}>View Details</Link></p>
                                </Col>
 
                                <Col lg={6} md={12} sm={12} className={"mt-4"}>
@@ -28,6 +31,7 @@ class Courses  extends Component{
                                <Col lg={6} md={6} sm={12} className={"mt-4"}>
                                    <h3  className={"serviceTitle"}>Javascript</h3>
                                    <p style={{textAlign:'justify'}} className={"serviceText"}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturi   </p>
+                                   <p><Link to={"/course-details"}>View Details</Link></p>
                                </Col>
                            </Row>
                             

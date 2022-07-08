@@ -79,9 +79,7 @@ class Summary extends Component{
                                                <p className={"sumaryText"}><FontAwesomeIcon className={"iconStyle"} icon={faCheckSquare} /> Web Design</p>
                                                <p className={"sumaryText"}><FontAwesomeIcon className={"iconStyle"} icon={faCheckSquare} /> Mobile design</p>
                                                <p className={"sumaryText"}><FontAwesomeIcon className={"iconStyle"} icon={faCheckSquare} /> Code Testing</p>
-
                                             </Card.Text>
-
                                         </Card.Body>
                                     </Card>
                                 </Col>

@@ -267,3 +267,174 @@
     font-family: "Raleway", serif;
     font-size: 14px;
 }
+
+.pageTitleBar{
+    background-image: url("../../assets/images/page.png");
+    min-height: 250px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.pageTitleoverLay{
+    min-height: 250px;
+    background-color: rgba(3, 19, 59, 0.86);
+    position: absolute;
+    width: 100%;
+}
+
+.topPageTitle{
+    color: #fff;
+    font-family: "Montserrat", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.mainPageContent{
+    margin-top: 10em;
+}
+Nav a{
+    text-decoration: none;
+
+}
+Nav a .active{
+    text-decoration: none;
+    color: #a8840f;
+}
+.intro-area{
+    margin-top: -70px;
+    position: relative;
+    z-index: 2;
+}
+.intro-inner{
+    box-shadow: 0 0 30px rgb(0 0 0 / 7%);
+    background: #fff;
+    padding: 50px 0 0 0;
+    border-radius: 8px;
+}
+
+.section-title {
+    margin-bottom: 45px;
+    position: relative;
+}
+.section-title .sub-title {
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+
+}
+.section-title .sub-title.double-line:before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    height: 2px;
+    width: 40px;
+   background: #021a3f;
+}
+.section-title .sub-title.double-line:after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: 10px;
+    height: 2px;
+    width: 40px;
+    background:  #021a3f;
+}
+
+.welcomeMaintext{
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    color: #021a3f;
+    font-family: "Montserrat", serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+.bg-base{
+    background: #fdc800;
+}
+.pageLinks{
+    text-decoration: none;
+    color:#fff;
+}
+
+.pageLinks:hover{
+    text-decoration: none;
+    color:#fff;
+}
+.about-thumb-wrap.after-shape:after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    width: 154px;
+    height: 80%;
+    top: 50%;
+    border-radius: 10px;
+    background: #fdc800;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+.about-thumb-wrap {
+    height: 100%;
+    min-height: 350px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center center !important;
+    border-radius: 7px;
+}
+.about-thumb-wrap.after-shape {
+    margin-right: 90px;
+}
+.courseDetail img{
+    border-radius: 7px;
+}
+
+.courseDetailDescription{
+    margin-top: 10rem;
+    border: 1px solid #CBD6E2;
+    border-radius: 5px;
+    padding-bottom: 50px;
+
+}
+.courseText{
+    font-family: "Raleway", serif;
+    font-size: 20px;
+    padding: 20px;
+    color: #021a3f;
+}
+
+.coursePrice{
+    font-family: "Raleway", serif;
+    font-size: 20px;
+    color: #021a3f;
+}
+.coursePriceText{
+    font-family: "Montserrat", serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #021a3f;
+}
+
+.courseTextHead{
+    font-family: "Raleway", serif;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px;
+    color: #021a3f;
+}
+
+.courseBtn{
+    font-family: "Raleway", serif;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 30px;
+    color: #021a3f;
+    border-radius: 5px;
+
+}
+
+
