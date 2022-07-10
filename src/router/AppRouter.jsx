@@ -26,8 +26,8 @@ class AppRouter extends Component{
                     <Route path={"/contact"} element={<ContactPage/>} />
                     <Route path={"/refund"} element={<RefundPage/>} />
                     <Route path={"/terms"} element={<TermsAndCondition/>} />
-                    <Route path={"/project-details"} element={<ProjectDetailsPage/>} />
-                    <Route path={"/course-details"} element={<CourseDetailsPage/>} />
+                    <Route path={"/project-details/:projectID/:projectName"} element={<ProjectDetailsPage/>} />
+                    <Route path={"/course-details/:courseId/:courseName"} element={<CourseDetailsPage/>} />
                 </Routes>
             </Fragment>
         );

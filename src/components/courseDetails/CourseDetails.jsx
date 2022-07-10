@@ -1,8 +1,27 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
 import courseIMage from "../../assets/images/summary.jpg"
+import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
+import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 
 class CourseDetails extends Component{
+    constructor(props) {
+        super(props);
+        this.state={
+            selectedCourseId:props.courseID,
+            selectedCourseData:[]
+        }
+    }
+    componentDidMount() {
+        GetApiUrl.GetApiRequest(ApiUrl.SingleCourseData+this.state.selectedCourseId).then((result)=>{
+            this.setState({
+                selectedCourseData:result
+            })
+            console.log(this.state.selectedCourseData[0])
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
 
     render() {
         return (
@@ -11,11 +30,12 @@ class CourseDetails extends Component{
                     <Row>
                         <Col lg={8} md={8} sm={12}>
                            <div className={"courseDetail"}>
-                               <h4 className={"welcomeMaintext"}>Fox Nymphs Grab Quick-jived Waltz. Brick Quiz Whangs</h4>
+                               <h4 className={"welcomeMaintext"}>{this.state.selectedCourseData['long_title']}</h4>
                                <img src={courseIMage} style={{width:'100%'}} alt=""/>
                                <h6 className={"courseTextHead"}  style={{textAlign:'justify'}}>Overview</h6>
-                               <p className={"serviceText"} style={{textAlign:'justify'}} >The quick, bThe quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump.rown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab</p>
-
+                               <p className={"serviceText"} style={{textAlign:'justify'}} >
+                                   {this.state.selectedCourseData['long_description']}
+                               </p>
 
                            </div>
                         </Col>
@@ -24,15 +44,15 @@ class CourseDetails extends Component{
                                 <h3 className={"courseTextHead"}>Course Features</h3>
                                 <hr/>
                               <p className={"courseText"}>
-                                  <strong>Enrolled :</strong> 1200 students <br/>
-                                  <strong>Duration :</strong> 2 hours <br/>
-                                  <strong>Lectures :</strong> 8 <br/>
-                                  <strong>Categories: </strong>Technology <br/>
-                                  <strong>Tags: </strong>Android, JavaScript <br/>
-                                  <strong>Instructor:</strong> Ethan Dean
+                                  <strong>Enrolled :</strong>  {this.state.selectedCourseData['students_number']} students <br/>
+                                  <strong>Duration :</strong>  {this.state.selectedCourseData['duration']}<br/>
+                                  <strong>Lectures :</strong>  {this.state.selectedCourseData['lectures_number']}<br/>
+                                  <strong>Categories: </strong>{this.state.selectedCourseData['categories']} <br/>
+                                  <strong>Tags: </strong> {this.state.selectedCourseData['tags']} <br/>
+                                  <strong>Instructor:</strong>  {this.state.selectedCourseData['instructor']}
                               </p>
                                 <Container className={"text-center "}>
-                                    <strong className={"coursePrice"}>Price :</strong> <span className={"coursePriceText"}>5000GHS</span>
+                                    <strong className={"coursePrice"}>Price :</strong> <span className={"coursePriceText"}> {this.state.selectedCourseData['course_price']}</span>
                                     <br/><Button className={"btn-warning"}><p className={"courseBtn"}>Enroll Now</p></Button>
                                 </Container>
                             </div>

@@ -1,23 +1,33 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component, Fragment, useEffect} from 'react';
 import NavigationBar from "../../components/Topbar/NavigationBar";
 import PageTitle from "../../components/pageIdentifier/PageTitle";
 import ProjectDetails from "../../components/projectDetails/ProjectDetails";
 import Footer from "../../components/footer/footer";
+import { useParams } from "react-router-dom";
 
-class ProjectDetailsPage extends Component {
-    componentDidMount() {
-        window.scroll(0,0);
-    }
-    render() {
+
+ function ProjectDetailsPage(props) {
+
+    let {projectID} = useParams();
+    let {projectName} = useParams();
+
+     useEffect(() => {
+
+         window.scroll(0,0);
+         console.log(`/project/${projectID}`);
+
+     }, []);
+
+
         return (
             <Fragment>
                 <NavigationBar/>
-                <PageTitle pageTitle={"Project Details"}/>
-                <ProjectDetails/>
+                <PageTitle pageTitle={projectName}/>
+                <ProjectDetails id={projectID}/>
                 <Footer/>
             </Fragment>
         );
-    }
+
 
 }
 export default ProjectDetailsPage;

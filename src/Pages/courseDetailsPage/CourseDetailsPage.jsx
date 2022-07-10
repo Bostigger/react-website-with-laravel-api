@@ -1,24 +1,28 @@
-import React, {Component, Fragment} from "react";
+import React, {Component, Fragment, useEffect} from "react";
 import NavigationBar from "../../components/Topbar/NavigationBar";
 import PageTitle from "../../components/pageIdentifier/PageTitle";
 import CourseDetails from "../../components/courseDetails/CourseDetails";
 import Footer from "../../components/footer/footer";
+import {useParams} from "react-router-dom";
 
-class CourseDetailsPage extends Component{
+function CourseDetailsPage(props){
 
-    componentDidMount() {
+    let {courseId} = useParams();
+    let {courseName} = useParams();
+
+    useEffect(()=>{
         window.scroll(0,0);
-    }
-    render() {
+    },[])
+
         return (
            <Fragment>
                <NavigationBar/>
-               <PageTitle pageTitle={"Course Details"}/>
-               <CourseDetails/>
+               <PageTitle pageTitle={courseName}/>
+               <CourseDetails courseID={courseId}/>
                <Footer/>
            </Fragment>
         );
-    }
+
 
 }
 export default CourseDetailsPage;
