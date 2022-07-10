@@ -12,7 +12,8 @@ class TopBar  extends Component {
         super(props);
         this.state = {
             homeData: [],
-            loading: true
+            loaderClass:"text-center",
+            topBarData:"d-none"
         }
     }
 
@@ -20,7 +21,9 @@ class TopBar  extends Component {
         GetApiUrl.GetApiRequest(ApiUrl.HomepageData).then((result) => {
             this.setState({
                 homeData: result,
-                loading: false
+                loaderClass:"d-none",
+                topBarData:"text-center"
+
 
             })
         }).catch((error) => {
@@ -32,14 +35,15 @@ class TopBar  extends Component {
     }
 
     render() {
-        if (this.state.loading === true) {
-            return <Loading/>
-        } else {
+
             const homedataResults = this.state.homeData;
             const homeResult = homedataResults.map((data) => {
                 return (
                     <div>
-                        <Col>
+                        <Col className={this.state.loaderClass}>
+                            <Loading/>
+                        </Col>
+                        <Col className={this.state.topBarData}>
                             <h1 className="topBarTitle">{data.home_title}</h1>
                             <h2 className="topBarSubTitle">{data.home_subtitle}</h2>
                             <Button>{data.button_text}</Button>
@@ -63,7 +67,6 @@ class TopBar  extends Component {
 
             );
         }
-    }
 }
 
 export default TopBar;
