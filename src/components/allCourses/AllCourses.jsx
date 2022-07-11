@@ -5,6 +5,7 @@ import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import {Link} from "react-router-dom";
 import Loading from "../loading/Loading";
 import ApiError from "../error/ApiError";
+import {Fade, Flip} from "react-awesome-reveal";
 
 class AllCourses extends Component {
     constructor(props) {
@@ -73,9 +74,11 @@ class AllCourses extends Component {
                     <Container>
                         <h2 className="serviceHeader text-center">Available Courses</h2>
                         <div className="bottom-line"></div>
-                        <Row>
-                            {courses}
-                        </Row>
+                       <Fade direction={"right"}>
+                           <Row>
+                               {courses}
+                           </Row>
+                       </Fade>
                     </Container>
                 </Fragment>
             );

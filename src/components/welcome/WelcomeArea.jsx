@@ -6,6 +6,7 @@ import welcomeThree from "../../assets/images/welcomeThree.png";
 import lightIcon from "../../assets/images/19.png";
 import gradIcon from "../../assets/images/20.png";
 import bookIcon from "../../assets/images/21.png";
+import {Fade, Zoom} from "react-awesome-reveal";
 
 class WelcomeArea extends Component{
 
@@ -17,32 +18,36 @@ class WelcomeArea extends Component{
                         <Col lg={12} md={12} sm={12}>
                             <div className={"intro-area"}>
                               <div className={"intro-inner"}>
-                                  <div className={"section-title text-center"}>
-                                     <h6 className={"sub-title double-line serviceTitle"}>WELCOME</h6>
-                                     <h2 className={"welcomeMaintext"}>
-                                         An exemplary <br/>
-                                         learning community
-                                     </h2>
-                                  </div>
-                                  <Container className={"text-center"}>
-                                      <Row>
-                                          <Col lg={4} md={6} sm={12}>
-                                              <img src={welcomeOne} alt=""/>
-                                              <h5 className={"serviceTitle"}>Postgraduate</h5>
-                                              <p className={"serviceText"}>Learn to mastery</p>
-                                          </Col>
-                                          <Col lg={4} md={6} sm={12}>
-                                              <img src={welcomeTwo} alt=""/>
-                                              <h5 className={"serviceTitle"}>Postgraduate</h5>
-                                              <p className={"serviceText"}>Learn to mastery</p>
-                                          </Col>
-                                          <Col lg={4} md={6} sm={12} >
-                                              <img src={welcomeThree} alt=""/>
-                                              <h5 className={"serviceTitle"}>Postgraduate</h5>
-                                              <p className={"serviceText"}>Learn to mastery</p>
-                                          </Col>
-                                      </Row>
-                                  </Container>
+                                  <Fade direction={"down"} triggerOnce={true}>
+                                      <div className={"section-title text-center"}>
+                                          <h6 className={"sub-title double-line serviceTitle"}>WELCOME</h6>
+                                          <h2 className={"welcomeMaintext"}>
+                                              An exemplary <br/>
+                                              learning community
+                                          </h2>
+                                      </div>
+                                  </Fade>
+                                 <Zoom triggerOnce={true}>
+                                     <Container className={"text-center"}>
+                                         <Row>
+                                             <Col lg={4} md={6} sm={12}>
+                                                 <img src={welcomeOne} alt=""/>
+                                                 <h5 className={"serviceTitle"}>Postgraduate</h5>
+                                                 <p className={"serviceText"}>Learn to mastery</p>
+                                             </Col>
+                                             <Col lg={4} md={6} sm={12}>
+                                                 <img src={welcomeTwo} alt=""/>
+                                                 <h5 className={"serviceTitle"}>Postgraduate</h5>
+                                                 <p className={"serviceText"}>Learn to mastery</p>
+                                             </Col>
+                                             <Col lg={4} md={6} sm={12} >
+                                                 <img src={welcomeThree} alt=""/>
+                                                 <h5 className={"serviceTitle"}>Postgraduate</h5>
+                                                 <p className={"serviceText"}>Learn to mastery</p>
+                                             </Col>
+                                         </Row>
+                                     </Container>
+                                 </Zoom>
                                   <div className={"intro-footer bg-base mt-3 p-5"}>
                                    <Container>
                                        <Row className={"text-center"}>

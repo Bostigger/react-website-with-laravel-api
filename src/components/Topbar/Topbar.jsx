@@ -7,6 +7,7 @@ import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import axios from "axios";
 import Loading from "../loading/Loading";
 import ApiError from "../error/ApiError";
+import {Fade} from "react-awesome-reveal";
 
 class TopBar  extends Component {
     constructor(props) {
@@ -72,9 +73,11 @@ class TopBar  extends Component {
                     <Container fluid={true} className="topBar p-0">
                         <Container fluid={true} className="overLay">
                             <Container className="mainContent">
-                                <Row className="text-center">
-                                    {homeResult}
-                                </Row>
+                               <Fade direction={"up"} triggerOnce={true}>
+                                   <Row className="text-center">
+                                       {homeResult}
+                                   </Row>
+                               </Fade>
                             </Container>
                         </Container>
                     </Container>

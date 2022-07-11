@@ -5,6 +5,7 @@ import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import Loading from "../loading/Loading";
 import ApiError from "../error/ApiError";
+import {Slide} from "react-awesome-reveal";
 
 class Projects extends Component{
     constructor(props) {
@@ -65,9 +66,12 @@ class Projects extends Component{
                <Container className={"text-center"}>
                    <h2 className= "serviceHeader text-center">our projects</h2>
                    <div className="bottom-line"></div>
-                   <Row>
-                       {recentProjects}
-                   </Row>
+                   <Slide triggerOnce={true} direction={"left"}>
+                       <Row>
+                           {recentProjects}
+                       </Row>
+                   </Slide>
+
                </Container>
            </Fragment>
         );

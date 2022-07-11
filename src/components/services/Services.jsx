@@ -1,14 +1,13 @@
 import React, {Component, Fragment} from 'react';
-import {Card, Col, Container, Row} from "react-bootstrap";
-import designIcon from '../../assets/images/design.png';
-import WebIcon from '../../assets/images/web.png';
-import EcommerceIcon from '../../assets/images/ecommerce.png';
+import { Col, Container, Row} from "react-bootstrap";
+
 import '../../assets/css/main.css';
 import '../../assets/css/bootstrap.min.css';
 import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import Loading from "../loading/Loading";
 import ApiError from "../error/ApiError";
+import {Fade, Slide} from "react-awesome-reveal";
 
 class Services extends Component {
     constructor(props) {
@@ -65,9 +64,11 @@ class Services extends Component {
                     <Container>
                         <h2 className="serviceHeader text-center">our Services</h2>
                         <div className="bottom-line"></div>
-                        <Row>
-                            {services}
-                        </Row>
+                       <Slide direction={"down"} triggerOnce={true}>
+                           <Row >
+                               {services}
+                           </Row>
+                       </Slide>
                     </Container>
                 </Fragment>
             );

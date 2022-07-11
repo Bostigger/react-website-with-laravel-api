@@ -5,6 +5,7 @@ import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import Loading from "../loading/Loading";
 import ApiError from "../error/ApiError";
+import {Fade} from "react-awesome-reveal";
 
 class AllProjects extends Component{
 
@@ -72,9 +73,11 @@ class AllProjects extends Component{
                     <Container className={"text-center"}>
                         <h2 className="serviceHeader text-center">Available projects</h2>
                         <div className="bottom-line"></div>
-                        <Row>
-                            {projects}
-                        </Row>
+                        <Fade direction={"left"}>
+                            <Row>
+                                {projects}
+                            </Row>
+                        </Fade>
                     </Container>
                 </Fragment>
             );
