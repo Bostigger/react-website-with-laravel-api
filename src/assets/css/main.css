@@ -437,4 +437,10 @@ Nav a .active{
 
 }
 
+.errorText{
+    font-family: "Raleway", serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fd0707;
+}
 

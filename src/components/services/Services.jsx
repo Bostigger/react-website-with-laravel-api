@@ -8,6 +8,7 @@ import '../../assets/css/bootstrap.min.css';
 import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import Loading from "../loading/Loading";
+import ApiError from "../error/ApiError";
 
 class Services extends Component {
     constructor(props) {
@@ -15,23 +16,37 @@ class Services extends Component {
         this.state={
             servicesData:[],
             loading:true,
+            apiError:false
         }
     }
 
     componentDidMount() {
         GetApiUrl.GetApiRequest(ApiUrl.ServicesData).then((result)=>{
-            this.setState({
-                servicesData:result,
-                loading:false
-            })
+            if(result==null){
+                this.setState({
+                    loading:false,
+                    apiError:true
+                })
+            }else {
+                this.setState({
+                    servicesData: result,
+                    loading: false,
+                    apiError: false
+                })
+            }
         }).catch((error)=>{
             console.log(error)
+            this.setState({
+                apiError:true
+            })
         })
     }
 
     render() {
         if (this.state.loading === true) {
             return <Loading/>
+        }else if(this.state.apiError===true){
+            return <ApiError/>
         } else {
             const allServiceData = this.state.servicesData;
             const services = allServiceData.map((service) => {

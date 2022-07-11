@@ -4,6 +4,7 @@ import {Bar, ResponsiveContainer, BarChart, XAxis, Tooltip, Legend} from "rechar
 import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import Loading from "../loading/Loading";
+import ApiError from "../error/ApiError";
 
 class Analysis  extends Component{
     constructor(props) {
@@ -11,25 +12,39 @@ class Analysis  extends Component{
        // {Technology:"PHP", Projects:"100"},
          this.state= {
              chartData:[],
-             loading:true
+             loading:true,
+             apiError:false
          }
 
     }
 
     componentDidMount() {
         GetApiUrl.GetApiRequest(ApiUrl.ChartsData).then((result)=>{
-            this.setState({
-                chartData:result,
-                loading:false
-            })
+            if(result==null){
+                this.setState({
+                    loading:false,
+                    apiError:true
+                })
+            }else {
+
+                this.setState({
+                    chartData: result,
+                    loading: false,
+                    apiError: false
+                })
+            }
         }).catch((error)=>{
-            console.log(error)
+            this.setState({
+                apiError:true
+            })
         })
     }
 
     render() {
         if (this.state.loading === true) {
             return <Loading/>
+        }else if(this.state.apiError===true){
+            return <ApiError/>
         } else {
 
             return (

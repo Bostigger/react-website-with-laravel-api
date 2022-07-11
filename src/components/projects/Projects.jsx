@@ -4,27 +4,44 @@ import {Link} from "react-router-dom";
 import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import Loading from "../loading/Loading";
+import ApiError from "../error/ApiError";
 
 class Projects extends Component{
     constructor(props) {
         super(props);
         this.state={
             recentProjects:[],
-            loading:true
+            loading:true,
+            apiError:false
         }
     }
     componentDidMount() {
         GetApiUrl.GetApiRequest(ApiUrl.ProjectLimitData).then((result)=>{
-          this.setState({
-             recentProjects:result,
-              loading:false
-          });
+            if(result==null){
+                this.setState({
+                    recentProjects:result,
+                    loading:false,
+                    apiError:true
+                });
+            }else {
+                this.setState({
+                    recentProjects: result,
+                    loading: false,
+                    apiError: false
+                });
+            }
+        }).catch((err)=>{
+            this.setState({
+               apiError:true
+            });
         })
     }
     render() {
         if (this.state.loading === true) {
             return <Loading/>
-        } else {
+        }else if(this.state.apiError===true){
+            return <ApiError/>
+        }else {
         const projectResultsData = this.state.recentProjects;
         const recentProjects = projectResultsData.map((project)=>{
            return (

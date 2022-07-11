@@ -4,6 +4,7 @@ import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import {Link} from "react-router-dom";
 import Loading from "../loading/Loading";
+import ApiError from "../error/ApiError";
 
 class AllCourses extends Component {
     constructor(props) {
@@ -11,24 +12,36 @@ class AllCourses extends Component {
         this.state={
             allCoursesData:[],
             loading:true,
+            apiError:false
         }
     }
 
     componentDidMount() {
         GetApiUrl.GetApiRequest(ApiUrl.AllCoursesData).then((result)=>{
-            this.setState({
-                allCoursesData:result,
-                loading:false
-            })
+            if(result==null){
+                this.setState({
+                    apiError:true,
+                    loading:false
+                })
+            }else {
+                this.setState({
+                    allCoursesData: result,
+                    loading: false
+                })
+            }
         }).catch((error)=>{
-            console.log(error)
+            this.setState({
+                apiError:true
+            })
         })
     }
 
     render() {
         if (this.state.loading === true) {
             return <Loading/>
-        } else {
+        }else if(this.state.apiError===true){
+            return <ApiError/>
+        }else {
 
             const allCoursesData = this.state.allCoursesData;
             const courses = allCoursesData.map((course) => {

@@ -6,6 +6,7 @@ import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
 import axios from "axios";
 import Loading from "../loading/Loading";
+import ApiError from "../error/ApiError";
 
 class TopBar  extends Component {
     constructor(props) {
@@ -13,22 +14,33 @@ class TopBar  extends Component {
         this.state = {
             homeData: [],
             loaderClass:"text-center",
-            topBarData:"d-none"
+            topBarData:"d-none",
+            apiError:"d-none",
         }
     }
 
     componentDidMount() {
         GetApiUrl.GetApiRequest(ApiUrl.HomepageData).then((result) => {
-            this.setState({
-                homeData: result,
-                loaderClass:"d-none",
-                topBarData:"text-center"
+            if(result==null){
+                this.setState({
+                    loaderClass:"d-none",
+                    topBarData:"d-none",
+                    apiError:"text-center"
 
+                })
+            }else {
 
-            })
+                this.setState({
+                    homeData: result,
+                    loaderClass: "d-none",
+                    topBarData: "text-center",
+                    apiError: "d-none"
+
+                })
+            }
         }).catch((error) => {
             this.setState({
-                homeData: []
+                apiError:"text-center",
             })
         })
 
@@ -40,6 +52,9 @@ class TopBar  extends Component {
             const homeResult = homedataResults.map((data) => {
                 return (
                     <div>
+                        <Col className={this.state.apiError}>
+                            <ApiError/>
+                        </Col>
                         <Col className={this.state.loaderClass}>
                             <Loading/>
                         </Col>
