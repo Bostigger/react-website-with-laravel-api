@@ -56,7 +56,7 @@ class WelcomeArea extends Component{
                                                <Col>
                                                    <img src={lightIcon} alt=""/>
                                                </Col>
-                                               <Col style={{textAlign:"justify",marginLeft:'-30px',marginTop:'10px'}}>
+                                               <Col className={"yellowBoxText"}>
                                                    <h5>Engineering</h5>
                                                    <h5>Lorem ipsum dolor</h5>
                                                </Col>
@@ -68,7 +68,7 @@ class WelcomeArea extends Component{
                                                    <Col>
                                                        <img src={gradIcon} alt=""/>
                                                    </Col>
-                                                   <Col style={{textAlign:"justify",marginLeft:'-30px',marginTop:'10px'}}>
+                                                   <Col className={"yellowBoxText"}>
                                                        <h5>Engineering</h5>
                                                        <h5>Lorem ipsum dolor</h5>
                                                    </Col>
@@ -80,7 +80,7 @@ class WelcomeArea extends Component{
                                                    <Col>
                                                        <img src={bookIcon} alt=""/>
                                                    </Col>
-                                                   <Col style={{textAlign:"justify",marginLeft:'-30px',marginTop:'10px'}}>
+                                                   <Col className={"yellowBoxText"}>
                                                        <h5>Engineering</h5>
                                                        <h5>Lorem ipsum dolor</h5>
                                                    </Col>

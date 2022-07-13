@@ -10,6 +10,7 @@ import RefundPage from "../Pages/refundPage/RefundPage";
 import TermsAndCondition from "../Pages/termsAndCondition/TermsAndCondition";
 import ProjectDetailsPage from "../Pages/projectDetailsPage/ProjectDetailsPage";
 import CourseDetailsPage from "../Pages/courseDetailsPage/CourseDetailsPage";
+import MainPageNotFound from "../Pages/404MainPage/MainPageNotFound";
 
 class AppRouter extends Component{
 
@@ -17,6 +18,7 @@ class AppRouter extends Component{
         return (
             <Fragment>
                 <Routes>
+                    <Route path='*' element={<MainPageNotFound/>} />
                     <Route path={"/"} element={<HomePage/>} />
                     <Route path={"/home"} element={<HomePage/>} />
                     <Route path={"/services"} element={<ServicePage/>} />
@@ -28,6 +30,7 @@ class AppRouter extends Component{
                     <Route path={"/terms"} element={<TermsAndCondition/>} />
                     <Route path={"/project-details/:projectID/:projectName"} element={<ProjectDetailsPage/>} />
                     <Route path={"/course-details/:courseId/:courseName"} element={<CourseDetailsPage/>} />
+
                 </Routes>
             </Fragment>
         );

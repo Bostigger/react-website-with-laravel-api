@@ -16,7 +16,7 @@ class About extends Component{
                     <Row>
                         <Col lg={6} md={6} sm={12}>
                            <div className={"aboutImage"}>
-                               <img style={{height:'100%',marginTop:'200px'}} src={picture} alt=""/>
+                               <img className={"ceoImage"} src={picture} alt=""/>
                            </div>
                         </Col>
 

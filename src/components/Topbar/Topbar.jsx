@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import {Button, Col, Container, Row} from "react-bootstrap";
 import '../../assets/css/main.css';
+import '../../assets/css/responsive.css';
 import '../../assets/css/bootstrap.min.css';
 import GetApiUrl from "../../RestApi/apiClient/GetApiUrl";
 import ApiUrl from "../../RestApi/apiUrl/ApiUrl";
@@ -62,7 +63,7 @@ class TopBar  extends Component {
                         <Col className={this.state.topBarData}>
                             <h1 className="topBarTitle">{data.home_title}</h1>
                             <h2 className="topBarSubTitle">{data.home_subtitle}</h2>
-                            <Button>{data.button_text}</Button>
+                            <Button className={"bntSize"}>{data.button_text}</Button>
                         </Col>
                     </div>
                 )
